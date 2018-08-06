@@ -5,48 +5,48 @@
   <title>Stanford DLSS - Introduction to Library Technology</title>
   <meta name="description" content="Introduction to Library Technology first presented on 08 August 2018">
   <meta name="author" content="Jeremy Nelson">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
-  {% block nav_bar %}
+  
   <header>
-    <h3>Stanford DLSS Infrastructure <span class="breadcrumbs">{% block breadcrumbs %}{% endblock %}</span></h3>
+    <h3>Stanford DLSS Infrastructure <span class="breadcrumbs"></span></h3>
   </header>
-  {% endblock %}
-  {% block main %}
+  
+  
   <h1>Introduction to Library Technology</h1>
   <p>Jeremy Nelson, Software Engineer</p>
   <div class="wrapper">
     <article class="box">
       <h2>
-        <a href="{{ url_for('topic', name='timeline') }}">Timeline</a>
+        <a href="/timeline/">Timeline</a>
       </h2>
     </article>
     <article class="box">
       <h2>
-        <a href="{{ url_for('topic', name='marc-ils') }}">MARC and the ILS</a>
+        <a href="/marc-ils/">MARC and the ILS</a>
       </h2>
     </article>
     <article class="box">
       <h2>
-        <a href="{{url_for('topic', name='web-opac-discovery-layers') }}">
+        <a href="/web-opac-discovery-layers/">
           WWW, OPACs, and Discovery Layers</a>
       </h2>
     </article>
     <article class="box ">
       <h2>
-        <a href="{{ url_for('topic', name='rdf-linked-data') }}">RDF and Linked Data</a>
+        <a href="/rdf-linked-data/">RDF and Linked Data</a>
       </h2>
     </article>
     <article class="box">
         <h2>
-          <a href="{{ url_for('topic', name='glossary') }}">Glossary</a>
+          <a href="/glossary/">Glossary</a>
         </h2>
     </article>
   </div>
-  {% endblock %}
-  {% block navigation %}{% endblock %}
-  {% block footer %}
-  {% endblock %}
+  
+  
+  
+  
 </body>
 </html>

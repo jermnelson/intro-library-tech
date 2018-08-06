@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ Glossary{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block navigation %}
+{% with topic='glossary' %}
+  {% include 'topic-nav.html'  %}
+{% endwith %}
+{% endblock %}

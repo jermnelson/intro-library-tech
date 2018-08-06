@@ -1,0 +1,21 @@
+<nav>
+  <ul>
+    <li><strong>Topics:</strong></li>
+    <li {% if topic.endswith('timeline') %}class='selected'{% endif %}>
+        <a href="{{ url_for('topic', name='timeline') }}">Timeline</a>
+    </li>
+    <li {% if topic.endswith('marc-ils') %}class='selected'{% endif %}>
+      <a href="{{ url_for('topic', name='marc-ils') }}">MARC and the ILS</a>
+    </li>
+    <li {% if topic.endswith('web-opac-discovery-layers') %}class='selected'{% endif %}>
+      <a href="{{url_for('topic', name='web-opac-discovery-layers') }}">
+      WWW, OPACs, and Discovery Layers</a>
+    </li>
+    <li {% if topic.endswith('rdf-linked-data') %}class='selected'{% endif %}>
+      <a href="{{ url_for('topic', name='rdf-linked-data') }}">RDF and Linked Data</a>
+    </li>
+    <li {% if topic.endswith('glossary') %}class='selected'{% endif %}>
+      <a href="{{ url_for('topic', name='glossary') }}">Glossary</a>
+    </li>
+  </ul>
+</nav>

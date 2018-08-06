@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ MARC &amp; ILS{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block navigation %}
+{% with topic='marc-ils' %}
+  {% include 'topic-nav.html'  %}
+{% endwith %}
+{% endblock %}

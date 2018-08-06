@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ WWW, OPACs, and Discovery Layers{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block navigation %}
+{% with topic='web-opac-discovery-layers' %}
+  {% include 'topic-nav.html'  %}
+{% endwith %}
+{% endblock %}

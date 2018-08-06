@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/ RDF and Linked Data{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block navigation %}
+{% with topic='rdf-linked-data' %}
+  {% include 'topic-nav.html'  %}
+{% endwith %}
+{% endblock %}
