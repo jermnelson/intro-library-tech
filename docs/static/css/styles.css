@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'aleolight';
-    src: url("/static/fonts/Aleo-Light-webfont.eot");
-    src: url("/static/fonts/Aleo-Light-webfont.eot%3F%23iefix") format('embedded-opentype'),
-         url("/static/fonts/Aleo-Light-webfont.woff") format('woff'),
-         url("/static/fonts/Aleo-Light-webfont.ttf") format('truetype'),
-         url("/static/fonts/Aleo-Light-webfont.svg%23aleolight") format('svg');
+    src: url("https://jermnelson.github.io/intro-library-tech/static/fonts/Aleo-Light-webfont.eot");
+    src: url("https://jermnelson.github.io/intro-library-tech/static/fonts/Aleo-Light-webfont.eot%3F%23iefix") format('embedded-opentype'),
+         url("https://jermnelson.github.io/intro-library-tech/static/fonts/Aleo-Light-webfont.woff") format('woff'),
+         url("https://jermnelson.github.io/intro-library-tech/static/fonts/Aleo-Light-webfont.ttf") format('truetype'),
+         url("https://jermnelson.github.io/intro-library-tech/static/fonts/Aleo-Light-webfont.svg%23aleolight") format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -13,6 +13,22 @@
 body {
   font-family: 'aleolight', Verdana, sans-serif;
   margin: 40px;
+}
+
+header {
+  background-color: rgb(140, 21, 21);
+  color: rgb(255, 255, 250);
+  height: 50px;
+}
+
+
+header a {
+  color: rgb(255, 255, 250);
+  text-decoration: underline dotted rgb(255, 255, 250);
+}
+
+header h3 {
+  padding-top: .75em;
 }
 
 nav ul {
@@ -27,7 +43,18 @@ nav li  {
 
 nav a {
 
+}
 
+#ils {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 1em;
+}
+
+#marc {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 1em;
 }
 
 .timeline {
