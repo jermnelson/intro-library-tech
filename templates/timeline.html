@@ -1,0 +1,108 @@
+{% extends 'index.html' %}
+
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ Timeline{% endblock %}
+
+{% block main %}
+<h1>Library Technology Timeline</h1>
+<article {# class="timeline" #}>
+  <section class="timeline">
+    {# First Event #}
+    <div><h3>1790s</h3></div>
+    <div>First "library" cards where used in French
+    libraries on the back of playing cards.</div>
+    <div></div>
+    {# Second Event #}
+    <div><h3>1841</h3></div>
+    <div>
+      <p>Sir Antonio Panizzi publishes
+      <em>91 Rules for Standardizing the Cataloguing of Books</em>
+     for the British Museum (now Library).</p>
+   </div>
+    <div>
+        <img src="{{ url_for("static", filename="img/91-rules-page-1.png") }}" style="width: 300px; height:auto">
+    </div>
+    {# Third Event #}
+    <div>
+      <h3>1876</h3>
+    </div>
+    <div>
+       <p>
+       Charles Cutter publishes first edition of <em>Rules for a Printed Dictionary Catalogue</em>
+       that defines three objectives of a library catalog:</p>
+        <ol>
+            <li>Identifying (person can find a book by author,
+               title, subject, and date of publication)</li>
+            <li>Collocating (show what books a library has by a given author,
+                subject, and kind of literature)</li>
+            <li>Evaluating (book edition and its character)</li>
+        </ol>
+     </div>
+     <div>
+       <p>Melvil Dewey (of Dewey Decimal fame) Director of New York State Library
+        founds the Library Bureau company that sells 3x5 catalog cards to fit new
+        standardized to fit new card
+        catalog cabinets</p>
+     </div>
+     {# Fifth Event #}
+     <div>
+        <h3>1901</h3>
+     </div>
+     <div>
+       <p>Library of Congress starts selling author, title, and subject cards for purchase
+          by libraries</p>
+     </div>
+     <div>
+       <img src="{{ url_for("static", filename="img/card-example.png") }}">
+     </div>
+     {# Sixth Event #}
+     <div>
+       <h3>1960s</h3>
+     </div>
+  </section>
+
+      </th>
+        <td></td>
+      </tr>
+      <tr>
+        <th>1960s</th>
+        <td>MARC format for bibliographic electronic records for exchanging collection information
+         between libraries created at the Library of Congress by Henriette Avram</td>
+      </tr>
+      <tr>
+        <th>1980s</th>
+        <td>Development of first Integrated Library Systems (ILS) accessed
+           through dedicated terminals</td>
+      </tr>
+      <tr>
+        <th>1994</th>
+        <td>Amazon founded as a primary online book-store, website hugely influential in
+        people's User Interface expectations for finding books online</td>
+      </tr>
+      <tr>
+        <th>1998</th>
+        <td>Google Inc. founded in Menlo Park libraries will never be the same!</td>
+      </tr>
+      <tr>
+        <th>2000s</th>
+        <td>Library Vendors and Open Source "Discovery Layers" provide Amazon and Google "like"
+        search technologies that link to legacy ILS systems in libraries</td>
+      </tr>
+      <tr>
+        <th>2010s</th>
+        <td>Mobile Apps and interfaces to Libraries Catalog becoming more popular
+         and necessary for libraries.
+        </td>
+      </tr>
+     <tbody>
+    </table>
+  </section>
+  <section>
+
+         <br>
+         <img src="{{ url_for("static", filename="img/Dynix-Main-Menu-via-Telnet.jpg") }}"
+            class="u-pull-right"
+            style="width: 250px; height: auto">
+    <img src="{{ url_for("static", filename="img/google-logo.jpg") }}">
+  </section>
+</article>
+{% endblock %}

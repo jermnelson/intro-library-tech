@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stanford DLSS - Introduction to Library Technology</title>
+  <meta name="description" content="Introduction to Library Technology first presented on 08 August 2018">
+  <meta name="author" content="Jeremy Nelson">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+  {% block nav_bar %}
+  <header>
+    <h3>Stanford DLSS Infrastructure {% block breadcrumbs %}{% endblock %}</h3>
+  </header>
+  {% endblock %}
+  {% block main %}
+  <h1>Introduction to Library Technology</h1>
+  <p>Jeremy Nelson, Software Engineer</p>
+  <div class="wrapper">
+    <article class="box">
+      <h2>
+        <a href="{{ url_for('topic', name='timeline') }}">Timeline</a>
+      </h2>
+    </article>
+    <article class="box">
+      <h2>
+        <a href="{{ url_for('topic', name='marc-ils') }}">MARC and the ILS</a>
+      </h2>
+    </article>
+    <article class="box">
+      <h2>
+        <a href="{{url_for('topic', name='web-opac-discovery-layers') }}">
+          WWW, OPACs, and Discovery Layers</a>
+      </h2>
+    </article>
+    <article class="box rdf-linked-data">
+      <h2>RDF and Linked Data</h2>
+    </article>
+    <article class="box glossary">
+        <h2>Glossary</h2>
+    </article>
+  </div>
+  {% endblock %}
+  {% block footer %}
+  {% endblock %}
+</body>
+</html>
