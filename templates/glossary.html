@@ -1,9 +1,54 @@
 {% extends 'index.html' %}
 
-{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ Glossary{% endblock %}
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/ Glossary{% endblock %}
 
 {% block main %}
-
+<h1>Glossary</h1>
+<ul>
+  <li><strong>Access Points</strong> are the software "hooks" in the library catalog where patrons are able to search to look up the item.
+    Typical Access Points include author, title, and subject. With the advent of Discovery Layers/Systems, more of the MARC
+    records is exposed for searching.
+  </li>
+  <li><strong><a href="http://www.loc.gov/bibframe/docs/index.html" rel="nofollow">BIBFRAME</a></strong>, short for bibliographic framework, is a Library of
+Congress sponsored vocabulary for modeling bibliographic entities and relationships for library physical and digital collections.</li>
+<li><strong>Discovery Layers/Systems</strong> a catagory of library systems with <a href="http://projectblacklight.org/" rel="nofollow">Blacklight</a> being one of the most<br>
+popular, that provide a faceted search built upon full-text search indexing using <a href="http://lucene.apache.org/solr/" rel="nofollow">Solr</a> or
+<a href="https://www.elastic.co/products/elasticsearch" rel="nofollow">Elasticsearch</a>.</li>
+<li><strong><a href="http://dublincore.org/" rel="nofollow">Dublin Core</a></strong> a basic metadata vocabulary with a simple, flat structure with common elements
+like creator, title, format, and date that is the most widely metadata vocabulary used in range of industries beyond libraries.</li>
+<li><strong>ILS</strong> short for Integrated Library System, is the predominate enterprise software used by Libraries to manage their
+collections. Typically, an ILS has multiple functions for different library functions like acquisitions, cataloging,
+circulation, and other library functions.</li>
+<li><strong>LCSH</strong> short for Library of Congress Subject Headings, is a controlled vocabulary of subject headings or terms that are
+organized in a hiearchical fashion and are typically grouped from more general to more specific headings in a left-to-right
+order.</li>
+<li><strong>Linked Data</strong> a generic term associated with RDF data and related technologies with emphasis on data sharing between
+different institutions instead of duplicative services and data silos that is the current practice in cataloging and
+insitutional library systems.</li>
+<li><strong><a href="https://www.loc.gov/marc/" rel="nofollow">MARC</a></strong> short for <strong>MA</strong>chine-<strong>R</strong>eadable <strong>C</strong>ataloging is the original data interchange
+format for libraries that was initially created in the late 1960s that is still the dominate representation for
+bibliographic information in use by libraries. The current version is called MARC21 while MARC XML is a serialization format
+that represents MARC as XML.</li>
+<li><strong><a href="http://www.loc.gov/standards/mods/" rel="nofollow">MODS</a></strong> short for <em>Metadata Object Description Schema</em> is an XML vocabulary published
+by Library of Congress for describing typically born digital or digitalized objects like images. This schema is used primarily
+in digital repositories and not library catalogs.</li>
+<li><strong>OPAC</strong> is an acronym for <em>online public access catalog</em> for an ILS service that public web access to a library's catalog.</li>
+<li><strong>RDF</strong> or <a href="https://www.w3.org/RDF/" rel="nofollow">Resource Description Framework</a>, is an W3C specification for describing data to faciliate
+data interchange on the internet.</li>
+<li><strong>Semantic Web</strong> a term introduced in a 2001 Sir Tim Berners-Lee <a href="https://www.scientificamerican.com/magazine/sa/2001/05-01/" rel="nofollow">paper</a>
+of the same name, is a vision of machine-actionable data embedded with web resources for richer functionality and user interfaces
+than the current (at that time) static web.</li>
+<li><strong><a href="http://schema.org/" rel="nofollow">schema.org</a></strong> a metadata vocabulary co-sponsored by Google, Microsoft, and Yandex for semantically
+marking up web resources with linked data.</li>
+<li><strong>SPARQL</strong> query language for RDF and currently supported by full-featured RDF triplestores that allows for both simple and
+complex queries againest RDF triples using a syntax that is similar to both SQL and the RDF turtle serialization.</li>
+<li><strong>Triples</strong> or <strong>RDF Triples</strong> is the basic structure of RDF. Each triple statement is made up of three components,
+a <em>subject</em> made up of an IRI (Internet Resource Identifier) or Blank Node, a <em>predicate</em> made up an IRI, and an <em>object</em>
+made up either an IRI, Blank Node, or literal value.</li>
+<li><strong>Triplestore</strong> a data storage technology for RDF triples, popular triplestores include
+<a href="https://www.blazegraph.com/" rel="nofollow">Blazegraph</a>, Apache <a href="https://jena.apache.org/" rel="nofollow">Jena</a>, <a href="https://www.marklogic.com/" rel="nofollow">MarkLogic</a>,
+and Amazon <a href="https://aws.amazon.com/neptune/" rel="nofollow">Neptune</a>.</li>
+</ul>
 {% endblock %}
 
 {% block navigation %}

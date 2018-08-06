@@ -10,7 +10,10 @@
 <body>
   {% block nav_bar %}
   <header>
-    <h3>Stanford DLSS Infrastructure <span class="breadcrumbs">{% block breadcrumbs %}{% endblock %}</span></h3>
+    <img src="{{ url_for('static', filename='img/stanford-library-logo.svg') }}"
+    alt="Stanford Library Logo" style="float: left">
+    <h3>
+    &nbsp;DLSS Infrastructure <span class="breadcrumbs">{% block breadcrumbs %}{% endblock %}</span></h3>
   </header>
   {% endblock %}
   {% block main %}

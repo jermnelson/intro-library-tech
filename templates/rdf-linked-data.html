@@ -1,9 +1,11 @@
 {% extends 'index.html' %}
+{% set topic_title = "RDF and Linked-Data" %}
 
-{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/ RDF and Linked Data{% endblock %}
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/
+{{ topic_title }}{% endblock %}
 
 {% block main %}
-
+<h1>{{ topic_title }}</h1>
 {% endblock %}
 
 {% block navigation %}

@@ -1,9 +1,160 @@
 {% extends 'index.html' %}
 
-{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ MARC &amp; ILS{% endblock %}
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/
+  MARC Records &amp; ILS
+{% endblock %}
 
 {% block main %}
-
+<h1>MARC Records &amp; ILS</h1>
+<p>
+  MARC short for <strong>MA</strong>chine <strong>R</strong>eadable
+  <strong>C</strong>ataloging, is an electronic format and
+  carrier for bibliographic records and is also a standard supported by
+  the Library of Congress. MARC21 is the latest version of the standard and
+  also refers to binary format made up of fixed length and variable length
+  fields.
+  </p>
+  <p>Each field is usually referred by it's tag name, typical a three
+  digit number from 001-999 depending on the vendor. For fixed length fields
+  the position in the data usually references a pre-defined value. In variable
+  length fields, the data is organized into indicators and subfields.
+  Indicators are the first two characters and usually define types or supplement
+  the remaining subfields. The subfields are made up of a dictionary or hash with
+  a data element identifier, typically a single character or number, followed by
+  the value of the subfield.
+  </body>
+</p>
+<article id="marc">
+  <section>
+    <pre>
+     <code>
+=LDR  00789nam  2200253Ii 4500
+=001  4124646
+=003  OCoLC
+=005  19980413123232.0
+=008  780810s1946\\\\ohua\\\\\\\\\\000\1\eng\d
+=035  \\$a.b13135971$btbp$c-
+=040  \\$aIQU$cIQU
+=049  \\$aCOCA
+=090  \\$aPR4034.P7 1946b
+=090  \\$aPR4034$b.P7 1946b
+=100  1\$aAusten, Jane,$d1775-1817.
+=245  10$aPride and prejudice /$cJane Austen ; with illustrations by Edgard Cirlin.
+=260  \\$aCleveland :$bFine Editions Press,$c1946.
+=300  \\$a435 p. :$bill. ;$c21 cm.
+=700  1\$aCirlin, Edgard,$d1913-
+=907  \\$a.b13135971
+=902  \\$a130106
+=999  \\$b2$c980413$dm$ea$f-$g0
+=994  \\$atbp
+=945  \\$aPR4034.P7 1946b$g1$i33027004811729$j0$ltbp  $h0$oh$p$0.00$q $r-$s-$t1$u11$v4$w0$x0$y.i1373510x$z980413
+     </code>
+    </pre>
+  </section>
+  <section>
+    <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>About</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd001.html">001</a></td>
+            <td>Control (identifier) Number for the Record</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd09x.html">090</a></td>
+            <td>Local Call Number (This example uses Library of Congress Call Number)</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd100.html">100</a></td>
+            <td>Personal Name for Author/creator</td>
+          </tr>
+           <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd245.html">245</a></td>
+            <td>Title Statement</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd260.html">260</a></td>
+            <td>Publication, Distribution, etc. statements</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd300.html">300</a></td>
+            <td>Physical Description</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.loc.gov/marc/bibliographic/bd700.html">700</a></td>
+            <td>Added Entry-Personal Name</td>
+          </tr>
+        </tbody>
+       </table>
+  </section>
+  <section>
+    <code>
+      <pre>
+       &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+         &lt;collection xmlns="http://www.loc.gov/MARC21/slim"&gt;
+         &lt;record&gt;
+           &lt;leader&gt;LEADER 00000nam  2200289Ia 4500&lt;/leader&gt;
+       	&lt;controlfield tag="001"&gt;8383316&lt;/controlfield&gt;
+       	&lt;controlfield tag="003"&gt;OCoLC&lt;/controlfield&gt;
+       	&lt;controlfield tag="005"&gt;19981012112243.0&lt;/controlfield&gt;
+       	&lt;controlfield tag="008"&gt;820430s1918    nyu           000 1 eng  &lt;/controlfield&gt;
+       	&lt;datafield tag="010" ind1=" " ind2=" "&gt;
+             &lt;subfield code="a"&gt;18007296&lt;/subfield&gt;
+           &lt;/datafield&gt;
+       	&lt;datafield tag="040" ind1=" " ind2=" "&gt;
+       	  &lt;subfield code="a"&gt;DLC&lt;/subfield&gt;
+             &lt;subfield code="c"&gt;ZMM&lt;/subfield&gt;
+             &lt;subfield code="d"&gt;ZMM&lt;/subfield&gt;
+           &lt;/datafield&gt;
+       	...
+       	&lt;datafield tag="100" ind1="1" ind2=" "&gt;
+             &lt;subfield code="a"&gt;Austen, Jane,&lt;/subfield&gt;
+             &lt;subfield code="d"&gt;1775-1817.&lt;/subfield&gt;
+           &lt;/datafield&gt;
+       	&lt;datafield tag="245" ind1="1" ind2="0"&gt;
+             &lt;subfield code="a"&gt;Pride and prejudice /&lt;/subfield&gt;
+             &lt;subfield code="c"&gt;by Jane Austen; with an introduction by William Dean Howells&lt;/subfield&gt;
+           &lt;/datafield&gt;
+       	&lt;datafield tag="700" ind1="1" ind2=" "&gt;
+             &lt;subfield code="a"&gt;Howells, William Dean,&lt;/subfield&gt;
+       	  &lt;subfield code="d"&gt;1837-1920&lt;/subfield&gt;
+       	&lt;/datafield&gt;
+       	&lt;datafield tag="830" ind1=" " ind2="0"&gt;
+       	 &lt;subfield code="a"&gt;Modern student's library&lt;/subfield&gt;
+       	&lt;/datafield&gt;
+         &lt;/record&gt;
+          &lt;/collection&gt;
+      </pre>
+    </code>
+  </section>
+  <section>
+    <h2>MARC XML</h2>
+    <p>
+    The Library of Congress has also released an XML version of MARC called
+    MARCXML that represents the MARC structure in an XML schema.
+    MARCXML is useful because of
+    the large number of XML software and techniques that exist but the drawback
+    is that the MARCXML can be larger than the MARC21 record and that it is
+    merely a direct representation of the MARC21 record into corresponding XML
+    elements and attributes.
+  </section>
+</article>
+<hr>
+<h2>ILS (Integrated Library System)</h2>
+<article id="ils">
+  <section>
+    <p>
+    A classification of Library enterprise software, an ILS g started to be
+    developed and offered by larger institutions. These first generation catalogs
+    usually tried to mimic the card catalog already understood by library patrons
+    and were primarily text-based and accessed through dump terminals connected
+    to a central mainframe computer.
+  </p>
+</article>
 {% endblock %}
 
 {% block navigation %}

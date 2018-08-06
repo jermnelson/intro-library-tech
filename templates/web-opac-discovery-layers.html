@@ -1,9 +1,12 @@
 {% extends 'index.html' %}
+{% set topic_title = "World Wide Web, OPACs, and Discovery Layers" %}
 
-{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Home</a>/ WWW, OPACs, and Discovery Layers{% endblock %}
+{% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>
+  / {{ topic_title }}
+{% endblock %}
 
 {% block main %}
-
+<h1>{{ topic_title }}</h1>
 {% endblock %}
 
 {% block navigation %}
