@@ -57,6 +57,12 @@ nav a {
   grid-gap: 1em;
 }
 
+#rdf {
+  display: grid;
+  grid-template-columns: 60% auto;
+  grid-gap: 1em;
+}
+
 .timeline {
   display: grid;
   grid-template-columns: 5% 50% 45%;
@@ -78,10 +84,10 @@ nav a {
 
 .box {
   background-color: rgb(246, 219, 219);
-  color: #fff;
+  color: rgb(140, 21, 21);
   border-radius: 5px;
   padding: 20px;
-  font-size: 150%;
+  font-size: 125%;
 }
 
 .box a {
