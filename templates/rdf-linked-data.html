@@ -6,6 +6,23 @@
 
 {% block main %}
 <h1>{{ topic_title }}</h1>
+<article id="rdf">
+  <section>
+    <p>
+      The <a href="http://www.w3.org/standards/semanticweb/">Semantic Web</a> is
+      an international effort to bring machine-readable data to the web called linked
+      data and was initially proposed by Sir Tim Berners-Lee in a 2001 article.
+      <a href="https://www.w3.org/2001/sw/wiki/RDF">RDF</a> (Resource Description
+      Framework) is a W3C specification that describes the model used to construct
+      a directed graph that can be searched and manipulated using
+      <a href="https://www.w3.org/2001/sw/wiki/SPARQL">SPARQL</a> query language.
+    </p>
+    <p>
+      RDF graphs made up a seriesof statements, called triples, that take the form of:
+      <strong>subject</strong> - <strong>predicate</strong>- <strong>object</strong>.
+    </p>
+  </section>
+</article>
 {% endblock %}
 
 {% block navigation %}

@@ -43,7 +43,7 @@
         standardized to fit new card
         catalog cabinets</p>
      </div>
-     {# Fifth Event #}
+     {# Event #}
      <div>
         <h3>1901</h3>
      </div>
@@ -54,7 +54,7 @@
      <div>
        <img src="{{ url_for("static", filename="img/card-example.png") }}">
      </div>
-     {# Sixth Event #}
+     {# Event #}
      <div>
        <h3>1960s</h3>
      </div>
@@ -65,7 +65,7 @@
        </p>
      </div>
      <div></div>
-     {# Seventh Event #}
+     {# Event #}
      <div>
        <h3>1980s</h3>
      </div>
@@ -78,7 +78,7 @@
          alt="Dynix Terminal Main Menu Screenshot"
          style="width: 500px">
      </div>
-     {# Eighth Event#}
+     {# Event#}
      <div>
        <h3>1989</h3>
      </div>
@@ -86,7 +86,7 @@
        <p>Sir Tim Berners-Lee invents the world wide web at CERN</p>
      </div>
      <div></div>
-     {# Ninth Event #}
+     {# Event #}
     <div>
       <h3>1994</h3>
     </div>
@@ -98,7 +98,7 @@
         <img src="{{ url_for('static', filename='img/amazon_logo.gif')}}"
         alt="1998 Amazon Logo">
     </div>
-    {# Tenth Event #}
+    {# Event #}
     <div>
       <h3>1998</h3>
     </div>
@@ -111,7 +111,16 @@
       <img src="{{ url_for("static", filename="img/google-logo.jpg") }}"
       alt="Early Google Logo ">
     </div>
-    {# Eleventh Event #}
+    {# Event #}
+    <div>
+      <h3>2001</h3>
+    </div>
+    <div>
+      <p>Sir Tim Berners-Lee introduces the term <em>Semantic Web</em> in an
+        influential <a href="#">article</a> of the same name.
+      </p>
+    </div>
+    <div></div>
     <div>
       <h3>2000s</h3>
     </div>
@@ -126,13 +135,25 @@
             alt="Blacklight Logo"
             style="width: 500px">
     </div>
-    {# Twelth Event #}
+    {# Event #}
     <div>
       <h3>2010s</h3>
     </div>
     <div>
       <p>Mobile Apps and interfaces to Libraries Catalog becoming more popular
-       and necessary for libraries.</p>
+         and necessary for libraries.</p>
+    </div>
+    <div></div>
+    <div>
+      <h3>2011</h3>
+    </div>
+    <div>
+      <p>Library of Congress annouces a new linked-data replacement
+        for MARC that eventually becomes the RDF vocabulary
+        <a href="{{ url_for('topic', name='glossary') }}#BIBFRAME">
+          BIBFRAME</a>.
+        </p>
+
     </div>
     <div></div>
   </section>
