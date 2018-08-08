@@ -94,8 +94,150 @@ RDF and Linked-Data</span></h3>
     </p>
     <p>Finally, RDF graphs support different serialization methods for both
       input and export of data. The RDF XML serialization was the first method
-      followed by N3, Turtle, and JSON-LD.
+      followed by N-Triples, Turtle, and JSON-LD.
     </p>
+    <h3>Example SPARQL - Number of Triples in Graph</h3>
+    <code><pre>
+      SELECT (COUNT(*) as ?count)
+      WHERE { ?s ?p ?o . }
+    </pre></code>
+    <h3>Example SPARQL - Entities and Titles for all BIBFRAME Works</h3>
+    <code><pre>
+PREFIX bf: &lt;http://id.log.gov/onotologies/bibframe/&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+
+SELECT ?iri ?title
+
+WHERE { ?iri rdf:type bf:Work ;
+      	     bf:title ?title_node .
+      	?title_node rdf:value ?title
+}
+>>> http://www.worldcat.org/oclc/32050898,
+    "Pride and Prejudice"
+    </pre></code>
+  </section>
+  <section>
+    <h3>Example Graph in XML Format</h3>
+    <code><pre>
+      &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      &lt;rdf:RDF
+         xmlns:bf="http://id.log.gov/onotologies/bibframe/"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      &gt;
+        &lt;rdf:Description rdf:about="http://www.worldcat.org/oclc/32050898"&gt;
+          &lt;rdf:type rdf:resource="http://id.log.gov/onotologies/bibframe/Work"/&gt;
+          &lt;bf:title rdf:nodeID="N3d82a73836c547d8be606b01797b8fb8"/&gt;
+          &lt;rdf:type rdf:resource="http://id.log.gov/onotologies/bibframe/Text"/&gt;
+          &lt;bf:contribution rdf:nodeID="Nfbc8691a15774bf581a429e4f99822a7"/&gt;
+        &lt;/rdf:Description&gt;
+        &lt;rdf:Description rdf:about="https://en.wikipedia.org/wiki/Jane_Austen"&gt;
+          &lt;rdfs:label xml:lang="en"&gt;Jane Austen&lt;/rdfs:label&gt;
+          &lt;owl:sameAs rdf:resource="http://viaf.org/viaf/102333412"/&gt;
+          &lt;rdf:type rdf:resource="http://schema.org/Person"/&gt;
+        &lt;/rdf:Description&gt;
+        &lt;rdf:Description rdf:nodeID="Nfbc8691a15774bf581a429e4f99822a7"&gt;
+          &lt;bf:role rdf:resource="http://id.loc.gov/vocabulary/relators/aut"/&gt;
+          &lt;rdf:value rdf:resource="https://en.wikipedia.org/wiki/Jane_Austen"/&gt;
+          &lt;rdf:type rdf:resource="http://id.log.gov/onotologies/bibframe/Contribution"/&gt;
+        &lt;/rdf:Description&gt;
+        &lt;rdf:Description rdf:nodeID="N3d82a73836c547d8be606b01797b8fb8"&gt;
+          &lt;rdf:type rdf:resource="http://id.log.gov/onotologies/bibframe/Title"/&gt;
+          &lt;rdf:value xml:lang="en"&gt;Pride and Prejudice&lt;/rdf:value&gt;
+        &lt;/rdf:Description&gt;
+      &lt;/rdf:RDF&gt;
+    </pre></code>
+    <h3>Example in Turtle Format</h3>
+    <code><pre>
+      @prefix bf: &lt;http://id.log.gov/onotologies/bibframe/&gt; .
+      @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+      @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+      @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+      @prefix relators: &lt;http://id.loc.gov/vocabulary/relators/&gt; .
+      @prefix schema: &lt;http://schema.org/&gt; .
+      @prefix xml: &lt;http://www.w3.org/XML/1998/namespace&gt; .
+      @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+      &lt;http://www.worldcat.org/oclc/32050898&gt; a bf:Text,
+              bf:Work ;
+          bf:contribution [ a bf:Contribution ;
+                  bf:role relators:aut ;
+                  rdf:value &lt;https://en.wikipedia.org/wiki/Jane_Austen&gt; ] ;
+          bf:title [ a bf:Title ;
+                  rdf:value "Pride and Prejudice"@en ] .
+
+      &lt;https://en.wikipedia.org/wiki/Jane_Austen&gt; a schema:Person ;
+          rdfs:label "Jane Austen"@en ;
+          owl:sameAs &lt;http://viaf.org/viaf/102333412&gt; .
+    </pre></code>
+    <h3>Example in JSON-LD Format</h3>
+    <code><pre>
+      [
+        {
+          "@id": "https://en.wikipedia.org/wiki/Jane_Austen",
+          "@type": [
+            "http://schema.org/Person"
+          ],
+          "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+              "@language": "en",
+              "@value": "Jane Austen"
+            }
+          ],
+          "http://www.w3.org/2002/07/owl#sameAs": [
+            {
+              "@id": "http://viaf.org/viaf/102333412"
+            }
+          ]
+        },
+        {
+          "@id": "http://www.worldcat.org/oclc/32050898",
+          "@type": [
+            "http://id.log.gov/onotologies/bibframe/Work",
+            "http://id.log.gov/onotologies/bibframe/Text"
+          ],
+          "http://id.log.gov/onotologies/bibframe/contribution": [
+            {
+              "@id": "_:Nfbc8691a15774bf581a429e4f99822a7"
+            }
+          ],
+          "http://id.log.gov/onotologies/bibframe/title": [
+            {
+              "@id": "_:N3d82a73836c547d8be606b01797b8fb8"
+            }
+          ]
+        },
+        {
+          "@id": "_:N3d82a73836c547d8be606b01797b8fb8",
+          "@type": [
+            "http://id.log.gov/onotologies/bibframe/Title"
+          ],
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+            {
+              "@language": "en",
+              "@value": "Pride and Prejudice"
+            }
+          ]
+        },
+        {
+          "@id": "_:Nfbc8691a15774bf581a429e4f99822a7",
+          "@type": [
+            "http://id.log.gov/onotologies/bibframe/Contribution"
+          ],
+          "http://id.log.gov/onotologies/bibframe/role": [
+            {
+              "@id": "http://id.loc.gov/vocabulary/relators/aut"
+            }
+          ],
+          "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+            {
+              "@id": "https://en.wikipedia.org/wiki/Jane_Austen"
+            }
+          ]
+        }
+      ]
+    </pre></code>
   </section>
 
 </article>
