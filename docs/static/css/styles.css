@@ -41,7 +41,16 @@ nav li  {
    margin-right: 1em;
 }
 
-nav a {
+#bibframe {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-gap: 1em;
+}
+
+#discovery {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 1em;
 
 }
 
@@ -57,10 +66,48 @@ nav a {
   grid-gap: 1em;
 }
 
+#opac {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 1em;
+
+}
+
 #rdf {
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-gap: 1em;
+}
+
+#sparql-formats {
+  display: grid;
+  grid-template-columns: 50% auto;
+  grid-gap: 1em;
+}
+
+#web {
   display: grid;
   grid-template-columns: 60% auto;
   grid-gap: 1em;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+}
+
+.card h4 {
+  background-color: rgb(0, 108, 184);
+  color: white;
+  font-weight: bold;
+  margin-top: 0px;
+  padding: .5em;
+  text-align: center;
+}
+
+.card p {
+  padding-left: .5em;
 }
 
 .timeline {
