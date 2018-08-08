@@ -7,6 +7,108 @@
 
 {% block main %}
 <h1>{{ topic_title }}</h1>
+<article id="web">
+  <section>
+    <h2>World Web Web</h2>
+    <p>From it's beginnings on a CERN desktop computer, the World Web Web (WWW)
+      impact on all levels of society has been profound and libraries are still
+      reacting to the introduction of websites, the availablity of information,
+      and important to library systems, user expectations surrounding functionality
+      and interface norms.</p>
+    <h3>Amazon, Google, and Wikipedia</h3>
+      <p>
+        Both <a href="https://www.amazon.com/">Amazon</a> (founded in 1994) and
+        <a href="https://google.com/">Google</a> (founded in 1998) heavily influnce
+        the expectations of library technology users. Amazon's display of books
+        search results and detailed page views using such user interface
+        conventions as facets to filter results, all impacted the design of
+        library technologies. Google contextual searching was different from the
+        access-points based search of library ILS and provided better search
+        results for many queries that are difficult to replicate in the ILS.
+      </p>
+      <p>
+        The ongoing success of <a href="https://wikipedia.org/">Wikipedia</a> as
+        a resource built with user-contributed content, forced libraries to
+        reconsider their traditional roles as information gatekeepers.
+      </p>
+  </section>
+  <section>
+    <h3>Amazon Search and Product Pages</h3>
+    <a target="_blank" href="https://www.amazon.com/s/ref=nb_sb_ss_c_1_11?url=search-alias%3Dstripbooks&field-keywords=pride+and+prejudice&sprefix=Pride+and+P%2Caps%2C729">
+      <img src="{{ url_for('static', filename='img/amazon-pride-prejudice.png')}}"
+        style="width: 85%;"
+        alt="Screen shot of Amazon web site display of Pride and Prejudice search results">
+    </a>
+    <h3>Google Search</h3>
+    <a target="_blank" href="https://www.google.com/search?q=pride+and+prejudice">
+      <img src="{{ url_for('static', filename='img/google-pride-prejudice.png') }}"
+        style="width: 85%"
+        alt="Screen shot of Google search of Pride and Prejudice">
+    </a>
+  </section>
+</article>
+<article id="opac">
+  <section>
+    <h2>OPAC</h2>
+    <p>
+      The arrival of "Online Public Access Catalog" or (OPAC) that provided a web-based
+      interface to ILS started in the mid-1990s. Almost immediately, these often
+      primitive OPACS were much more popular among library users than the
+      physical card catalog or first-generation "text-based" catalogs of the
+      1970s and 1980s. The designs of these early OPACs reflected two different
+      access models, one deeply ground in assumptions and behavior of using the
+      physical card catalog with author, title, and subject access points while <thead>
+      other was using console-based information sources like DIALOG.
+    </p>
+  </section>
+  <section>
+    <h4>Example of an OPAC View of Pride and Prejudice</h4>
+    <iframe src="http://tiger.coloradocollege.edu/record=b1313597"
+            frameborder="0" border="0" cellspacing="0" width="100%" height="800px"
+            ></iframe>
+  </section>
+</article>
+<h2>Discovery Systems &amp; Institutional Repositories</h2>
+<article id="discovery">
+  <section>
+    <h3>SearchWorks</h3>
+    <p>DLSS's <a href="https://searchworks.stanford.edu/">SearchWorks</a> is
+      one of the best implementations of a Discovery environment.</p>
+    <a href="http://library.stanford.edu/all/?q=Pride+and+Prejudice&op=Search">
+      <img src="{{ url_for('static', filename='img/searchworks-pride-prejudice.png')}}"
+           alt="Stanford Searchworks Display of Pride and Prejudice"
+           style="width: 85%">
+    </a>
+
+  </section>
+  <section>
+    <h3>Discovery Layers/Systems</h3>
+    <img src="{{ url_for('static', filename='img/blacklight-logo.svg')}}"
+         style="float: right; width: 45%">
+    <p>
+     Discovery systems, both open-source (<a href="http://projectblacklight.org/"> Blacklight</a>, VuFind)
+     or commercial products like Innovative Interfaces' Encore, Ex Libris Summon,
+     OCLC's WorldCat Local, and Ebsco's Discovery Service. All of these
+     systems attempt to replicate a "Google" like search with puesdo-boolean
+     searches on indexes that include the library's catalog, digital repositories,
+     and purchased and opens-access article index and full-text databases.
+   </p>
+   <h3>Institutional Repositories</h3>
+   <p>
+     Institutional Digital Repositories are a class of software for preserving and
+     accessing digital content. Most library vendors offer commerical institutional
+     repository products with the biggest change was the purchase of
+     <a href="https://www.bepress.com/">Bepress</a> by Elsevier.
+   </p>
+   <p>
+     The open-source <a href="https://duraspace.org/fedora/">Fedora Repository</a> is the backend digital
+     repository that has two major front-ends; Hydra and Islandora.
+     <a href="https://library.stanford.edu/research/stanford-digital-repository">Stanford
+       Digital Repository</a> uses a legacy version of Fedora to store MODS XML
+       metadata but not for management of the resource bitstreams.
+    </p>
+  </section>
+</article>
 {% endblock %}
 
 {% block navigation %}

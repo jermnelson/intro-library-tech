@@ -18,11 +18,112 @@
       <a href="https://www.w3.org/2001/sw/wiki/SPARQL">SPARQL</a> query language.
     </p>
     <p>
-      RDF graphs made up a seriesof statements, called triples, that take the form of:
-      <strong>subject</strong> - <strong>predicate</strong>- <strong>object</strong>.
+      RDF graphs made up a series of statements, called RDF triples.
+      In a RDF triple, the first element is called a <strong>subject</strong> and represents a
+      resource with the second element, the <strong>predicate</strong>, describing
+      an aspect that connects to the third element, an <strong>object</strong>
+      made up a value, blank node, or IRI. One or more these triple statements
+      make up a RDF graph.
     </p>
+    <img src="{{ url_for('static', filename='img/jane-austen-pride-prejudice-graph.svg')}}"
+       alt="Diagram of a Jane Austen RDF Graph" >
+  </section>
+  <section>
+    <div class="card">
+      <h4>International Resource Identifiers (IRIs)</h4>
+      <p>
+          Linked Data is is based on the idea behind the common URL,
+          the uniform resource locator, used everyday when using the web.
+          Internationalized Resource Identifier or <strong>IRI</strong> extend
+          the concept of URL to use IRI as a global identifier and unlike a URL,
+          an IRI can contain unicode characters from other non-European languages.
+          An IRI serves as the critical linking data structure between local and
+          global information sources. <strong>NOTE</strong> an IRI need not exist
+          to be useful, only that it is uniquely and globally identifiable like
+          an URL.
+      </p>
+    </div>
+    <hr>
+    <h3>Subject Role</h3>
+    <ul>
+      <li>Must be either an IRI or a blank node</li>
+      <li>Represents a resource or entity</li>
+    </ul>
+    <h3>Predicate Role</h3>
+    <ul>
+      <li>Can only be an IRI</li>
+      <li>Is a relationship between the subject and object</li>
+    </ul>
+    <h3>Object Role</h3>
+    <ul>
+      <li>Must be either an IRI or a blank node</li>
+      <li>Is the property value of a resource or entity</li>
+    </ul>
   </section>
 </article>
+<h2>SPARQL &amp; Serialization Formats</h2>
+<article id="sparql-formats">
+  <section>
+    <p>The value of RDF Linked Data comes when it is paired with a
+      Triplestore that supports the RDF query language,
+      <a href="https://www.w3.org/TR/sparql11-query/">SPARQL</a> (short for
+      SPARQL Protocol and RDF Query Language), allows for sophisticated
+      retrieval of data within the triplestore as well as an means to
+      manipulate the data by adding, editing, or deleting triples contained in
+      the triplestore.
+    </p>
+    <p>With RDF <strong>predicates</strong> restricted to IRIs, multiple
+      RDF vocabularies can be used in the same graph with potential different
+      semantic statements being asserted about the same <strong>subject</strong>.
+      SPARQL easily handles multiple vocabularies like
+      <a href='https://schema.org/'>Schema.org</a> and
+      <a href="#bibframe">BIBFRAME</a>.
+    </p>
+    <p>Finally, RDF graphs support different serialization methods for both
+      input and export of data. The RDF XML serialization was the first method
+      followed by N3, Turtle, and JSON-LD.
+    </p>
+  </section>
+
+</article>
+<h2>BIBFRAME Vocabulary</h2>
+<p>
+  A RDF vocabulary initiated by the Library of Congress in 2011, BIBFRAME,
+  short for Bibliographic Framework, is in it's second version and is the
+  bases for Linked Data for Libraries Production and other related projects.
+</p>
+<article id="bibframe">
+  <section>
+    <p>BIBFRAME is made up three primary classes, <strong>Work</strong>,
+      <strong>Instance</strong>, and <strong>Item</strong> and a number of
+      secondary, supporting classes.
+    </p>
+  <h3>BIBFRAME Work</h3>
+  <strong>Definition</strong>: <em>The highest level of abstraction, a Work, in
+    the BIBFRAME context, reflects the conceptual essence
+  of the cataloged resource:  authors, languages, and what it is about (subjects).
+  </em>
+  <a href="https://www.loc.gov/bibframe/docs/bibframe2-model.html" rel="nofollow">source</a>
+  <h3>BIBFRAME Instance</h3>
+  <strong>Definition</strong>:  <em>A Work may have one or more individual,
+    material embodiments, for example, a particular published form. These are
+    Instances of the Work.  An Instance reflects information such as its publisher,
+    place and date of publication, and format.</em>
+    <a href="https://www.loc.gov/bibframe/docs/bibframe2-model.html" rel="nofollow">source</a></p>
+  <h3>BIBFRAME Item</h3>
+  <strong>Definition</strong>: <em>An item is an actual copy (physical or
+    electronic) of an Instance. It reflects information
+   such as its location (physical or virtual), shelf mark, and barcode.</em>
+   <a href="https://www.loc.gov/bibframe/docs/bibframe2-model.html" rel="nofollow">source</a></p>
+  </section>
+  <section>
+    <a href='http://www.loc.gov/bibframe/docs/bibframe2-model.html'>
+      <img src="{{ url_for('static', filename='img/bf2-model.jpg') }}"
+       alt="BIBFRAME 2.0 Model">
+    </a>
+  </section>
+</article>
+
 {% endblock %}
 
 {% block navigation %}
