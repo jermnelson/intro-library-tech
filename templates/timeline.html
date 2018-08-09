@@ -1,12 +1,13 @@
 {% extends 'index.html' %}
-
+{% set topic_title = 'Library Technology Timeline' %}
 {% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/ Timeline{% endblock %}
 
 {% block main %}
-<h1>Library Technology Timeline</h1>
+<h1>{{ topic_title }}</h1>
 <article {# class="timeline" #}>
   <section class="timeline">
     {# First Event #}
+    {# Need to add folio based Dictionary and Subject Indices, look for examples #}
     <div><h3>1790s</h3></div>
     <div>First "library" cards were used in French
     libraries on the back of playing cards.</div>

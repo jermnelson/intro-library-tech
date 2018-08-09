@@ -1,10 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/WebSite">
 <head>
   <meta charset="utf-8">
-  <title>Stanford DLSS - Introduction to Library Technology</title>
-  <meta name="description" content="Introduction to Library Technology first presented on 08 August 2018">
-  <meta name="author" content="Jeremy Nelson">
+  <title itemprop="name">Stanford Libraries - Introduction to Library Technology
+    {% if topic_title %}{{ topic_title }}{% endif %}
+  </title>
+  <meta name="description"
+        itemprop="description"
+        content="Introduction to Library Technology first presented on 08 August 2018">
+  <meta name="author" itemprop="creator" content="Jeremy Nelson">
+  <meta itemprop="dateCreated" content="2018-08-08" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>

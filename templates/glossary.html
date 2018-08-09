@@ -1,9 +1,11 @@
 {% extends 'index.html' %}
+{% set topic_title = "Glossary" %}
 
 {% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/ Glossary{% endblock %}
 
 {% block main %}
-<h1>Glossary</h1>
+<h1>{{ topic_title }}</h1>
+
 <ul>
   <li><strong>Access Points</strong> are the software "hooks" in the library catalog where patrons are able to search to look up the item.
     Typical Access Points include author, title, and subject. With the advent of Discovery Layers/Systems, more of the MARC

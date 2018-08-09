@@ -1,11 +1,12 @@
 {% extends 'index.html' %}
+{% set topic_title = "MARC Records and the ILS" %}
 
 {% block breadcrumbs %}-- <a href="{{ url_for('home') }}">Introduction to Library Technologies</a>/
   MARC Records &amp; ILS
 {% endblock %}
 
 {% block main %}
-<h1>MARC Records &amp; ILS</h1>
+<h1>{{ topic_title }}</h1>
 <p>
   MARC short for <strong>MA</strong>chine <strong>R</strong>eadable
   <strong>C</strong>ataloging, is an electronic format and
